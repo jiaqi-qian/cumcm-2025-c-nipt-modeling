@@ -1,0 +1,8 @@
+{
+  "bootstrap": 500,
+  "q1_cv_seeds": 20,
+  "q3_cv_seeds": 100,
+  "jobs": 4,
+  "q1_bootstrap_success": 500,
+  "elapsed_seconds": 653.723418712616
+}

@@ -1,0 +1,11 @@
+numpy>=2.0,<3
+pandas>=2.2,<3
+scipy>=1.14,<2
+statsmodels>=0.14,<1
+scikit-learn>=1.6,<2
+joblib>=1.4,<2
+matplotlib>=3.9,<4
+openpyxl>=3.1,<4
+optuna>=4,<5
+lightgbm>=4,<5
+PyWavelets>=1.8,<2

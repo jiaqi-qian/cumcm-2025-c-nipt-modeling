@@ -1,0 +1,53 @@
+{
+  "best_bic_model": "bmi_only",
+  "bmi_only": {
+    "distribution": "lognormal",
+    "feature_cols": [
+      "first_bmi"
+    ],
+    "coefficients": [
+      2.0470704846991445,
+      0.1170110221658537
+    ],
+    "sigma": 0.5339858058446498,
+    "means": [
+      31.84743720113117
+    ],
+    "scales": [
+      2.9861392871506705
+    ],
+    "neg_loglik": 181.01682230479275,
+    "aic": 368.0336446095855,
+    "bic": 378.7953905847863,
+    "success": true,
+    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+    "n": 267,
+    "ridge": 0.0
+  },
+  "best": {
+    "distribution": "lognormal",
+    "feature_cols": [
+      "first_bmi"
+    ],
+    "coefficients": [
+      2.0470704846991445,
+      0.1170110221658537
+    ],
+    "sigma": 0.5339858058446498,
+    "means": [
+      31.84743720113117
+    ],
+    "scales": [
+      2.9861392871506705
+    ],
+    "neg_loglik": 181.01682230479275,
+    "aic": 368.0336446095855,
+    "bic": 378.7953905847863,
+    "success": true,
+    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+    "n": 267,
+    "ridge": 0.0
+  },
+  "bic_improvement_vs_bmi": 0.0,
+  "aic_improvement_vs_bmi": 0.0
+}

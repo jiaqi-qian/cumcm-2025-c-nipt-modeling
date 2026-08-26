@@ -1,0 +1,62 @@
+{
+  "locked_version": "Q4-LOCK-2026-08-24-v1",
+  "selection": {
+    "ANY": {
+      "source": "core",
+      "feature_set": "core",
+      "model": "elastic",
+      "role": "overall_primary_screen",
+      "automatic_diagnosis": false,
+      "rationale": "Higher 100-seed F1/PR-AUC and chronological F1 with 29 rather than 64 features."
+    },
+    "T13": {
+      "source": "core",
+      "feature_set": "core",
+      "model": "extra_trees",
+      "role": "nonlinear_auxiliary_subtype",
+      "automatic_diagnosis": false,
+      "rationale": "Higher 100-seed F1 and much stronger woman-weighted chronology using 29 rather than 157 features; retain longitudinal ExtraTrees as sensitivity comparator."
+    },
+    "T18": {
+      "source": "incumbent",
+      "feature_set": "engineered",
+      "model": "elastic",
+      "role": "primary_subtype_screen",
+      "automatic_diagnosis": false,
+      "rationale": "Core F1 gain was only 0.0001 while recall and chronological F1 fell materially; keep engineered Elastic Net."
+    },
+    "T21": {
+      "source": "core",
+      "feature_set": "core",
+      "model": "lda",
+      "role": "retest_risk_ranking_only",
+      "automatic_diagnosis": false,
+      "rationale": "Core shrinkage LDA improves ranking metrics, but precision and bootstrap lower bound remain inadequate for automatic calls."
+    }
+  },
+  "evaluation": {
+    "random_seed_splits": 100,
+    "outer_cv": "StratifiedGroupKFold(4), group=pregnant woman",
+    "inner_cv": "StratifiedGroupKFold(3), group=pregnant woman",
+    "cluster_bootstrap": 500,
+    "chronological_holdout": "earliest 80% women train, latest 20% test"
+  },
+  "source_hashes": {
+    "core_summary": "375281a647ed70888b2385904620fda7ee649175e1d557713815d5ac6bb0b550",
+    "incumbent_summary": "6054aff3ab46c2000d9b2a5d88ea8fd0f6293c3267fc7c78c380f0b1a0705997",
+    "official_summary": "73361fce81fd299e541b6708c709a38ba9f8d63c73ac583fb8363d1f4a815753"
+  },
+  "freeze_policy": "Do not change models or headline metrics without a new version and the same leakage-safe validation suite.",
+  "artifact_hashes": {
+    "q4_locked_model_selection.csv": "ef6d2b9813369476c753dc8db742a12ec50d5c1439a7e73e7d5b615ebabe9604",
+    "q4_locked_method_comparison.csv": "83b91dd82b0e6410be10c5024bd48342ebf356e5f45b02c185693568ec492d69",
+    "q4_locked_record_results.csv": "68cc3d3917e27ed19ba221d0172dd9cbc0316eb945bd08942a40cda7a5ebe5cc",
+    "q4_locked_bootstrap_500.csv": "dd3e15f1db8ba8fc0ce7bf4b1e327b1d1c4b5b8d0a17594f36a5d91e4349dfb9",
+    "q4_locked_bootstrap_summary.csv": "7b065248c7f5712814cde1cccb0ac96a16ae34403d51c108a5cec4e4cef5b92f",
+    "q4_locked_core_vs_incumbent.csv": "ecf048c8ddbf7cbcc67cd8d324f4a7f29f3bc760e9d19e6498c22e6da3cc2815",
+    "q4_locked_chronological.csv": "dc9e149a30ae725cfece48538863816fe4ceead068367727bfb0af4209bd1f84",
+    "q4_locked_operational_models.json": "98dc93c987b594916efebb99c5e1b0051e54bce1f258031c9ae1d483656d81b7",
+    "q4_locked_validation_report.json": "524d044228e142c1916131589667e3cf00cf784f5c76c0282c9ab03e26686391",
+    "q4_locked_results.xlsx": "58cf3cec7c8d88b3929bd4f0c0f8a48852d6ade734315d343d6c3c89694187e4"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "input_sha256": "14827156218bd4f7e4f16db4aa6d9f757c6648379e038ae6c6b58383648614af",
+  "challengers": {
+    "ANY": {
+      "feature_set": "core",
+      "model": "elastic"
+    },
+    "T13": {
+      "feature_set": "core",
+      "model": "extra_trees"
+    },
+    "T18": {
+      "feature_set": "core",
+      "model": "elastic"
+    },
+    "T21": {
+      "feature_set": "core",
+      "model": "lda"
+    }
+  },
+  "seeds": 100,
+  "outer_cv": "StratifiedGroupKFold(4), group=pregnant woman",
+  "inner_cv": "StratifiedGroupKFold(3), group=pregnant woman",
+  "threshold_source": "inner-OOF within each outer training fold",
+  "bootstrap_replicates": 500,
+  "bootstrap_unit": "pregnant woman",
+  "chronological_holdout": "earliest 80% women train, latest 20% test",
+  "fixed_parameter_source": "predeclared anchors from q4_rebuild",
+  "leakage_assertions": {
+    "woman_overlap_between_train_test": 0,
+    "outer_test_used_for_preprocessing": false,
+    "outer_test_used_for_threshold": false,
+    "labels_or_health_outcome_used_as_features": false
+  },
+  "runtime_seconds": 818.6642260551453
+}

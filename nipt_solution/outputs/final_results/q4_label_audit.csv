@@ -1,0 +1,4 @@
+label,positive_records,positive_women,z_ge_3_sensitivity,abs_z_ge_3_sensitivity,positive_z_min,positive_z_max
+T13,23,18,0.0434782608695652,0.0434782608695652,-2.807104139,3.808298807
+T18,46,30,0.0,0.0,-0.904459909,2.974066103
+T21,13,12,0.0,0.0,-2.394334961,1.329150733

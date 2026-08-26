@@ -1,0 +1,110 @@
+\documentclass[UTF8,fontset=fandol,zihao=-4,a4paper]{ctexart}
+
+\usepackage[top=2.25cm,bottom=2.20cm,left=2.35cm,right=2.35cm]{geometry}
+\usepackage{fontspec}
+\setmonofont{Menlo}[Scale=0.92]
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,array,tabularx}
+\usepackage{graphicx,caption}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{fvextra}
+\usepackage{needspace}
+\usepackage{microtype}
+
+\definecolor{CodeText}{HTML}{1F2933}
+\definecolor{CodeRule}{HTML}{A8B2BC}
+\definecolor{FileBar}{HTML}{E9EEF2}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\captionsetup{font=small,labelsep=quad}
+
+% ---------- 代码排版（较范本放大字号，保证清晰可读） ----------
+\newcommand{\filedivider}[1]{%
+  \Needspace{3\baselineskip}%
+  \par\vspace{0.6\baselineskip}%
+  \noindent\colorbox{FileBar}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep\relax}{\small\ttfamily\detokenize{#1}}%
+  }%
+  \par\vspace{0.3\baselineskip}%
+}
+
+\newcommand{\codeinput}[1]{%
+  \VerbatimInput[
+    fontsize=\small,
+    formatcom=\color{CodeText},
+    numbers=left,
+    numbersep=5pt,
+    xleftmargin=2.4em,
+    frame=single,
+    framesep=3pt,
+    rulecolor=\color{CodeRule},
+    tabsize=4,
+    breaklines=true,
+    breakanywhere=false,
+    breaksymbolleft={},
+    breaksymbolright={},
+    showspaces=false,
+    showtabs=false
+  ]{#1}%
+}
+
+% ---------- 参考文献条目 ----------
+\newcommand{\refitem}[2]{\par\noindent\hangindent=2.2em\hangafter=1 [#1]\hspace{0.6em}#2\par\vspace{2pt}}
+
+\begin{document}
+\setcounter{page}{38}
+
+\section*{参考文献}
+\addcontentsline{toc}{section}{参考文献}
+
+\refitem{1}{Lo Y M D, Corbetta N, Chamberlain P F, et al. Presence of fetal DNA in maternal plasma and serum[J]. The Lancet, 1997, 350(9076): 485--487.}
+\refitem{2}{Chiu R W K, Chan K C A, Gao Y, et al. Noninvasive prenatal diagnosis of fetal chromosomal aneuploidy by massively parallel genomic sequencing of DNA in maternal plasma[J]. Proceedings of the National Academy of Sciences, 2008, 105(51): 20458--20463.}
+\refitem{3}{Wang E, Batey A, Struble C, et al. Gestational age and maternal weight effects on fetal cell-free DNA in maternal plasma[J]. Prenatal Diagnosis, 2013, 33(7): 662--666.}
+\refitem{4}{Ashoor G, Syngelaki A, Poon L C Y, et al. Fetal fraction in maternal plasma cell-free DNA at 11--13 weeks' gestation: relation to maternal and fetal characteristics[J]. Ultrasound in Obstetrics \& Gynecology, 2013, 41(1): 26--32.}
+\refitem{5}{Bianchi D W, Parker R L, Wentworth J, et al. DNA sequencing versus standard prenatal aneuploidy screening[J]. New England Journal of Medicine, 2014, 370(9): 799--808.}
+\refitem{6}{Norton M E, Jacobsson B, Swamy G K, et al. Cell-free DNA analysis for noninvasive examination of trisomy[J]. New England Journal of Medicine, 2015, 372(17): 1589--1597.}
+\refitem{7}{Klein J P, Moeschberger M L. Survival Analysis: Techniques for Censored and Truncated Data[M]. 2nd ed. New York: Springer, 2003.}
+\refitem{8}{王淑娟, 高志英, 吕艳萍, 等. 孕妇外周血中游离胎儿DNA检测在诊断胎儿染色体异常中的应用价值[J]. 中华妇产科杂志, 2012, 47(11): 808--812.}
+\refitem{9}{赵军红, 代鹏, 朱若男, 等. 2398例孕妇外周血游离胎儿DNA产前筛查阳性结果的验证与分析[J]. 中华妇产科杂志, 2020, 55(10): 679--684.}
+\refitem{10}{国家卫生计生委办公厅. 孕妇外周血胎儿游离DNA产前筛查与诊断技术规范[S]. 国卫办妇幼发〔2016〕45号, 2016.}
+
+\clearpage
+\section*{附录}
+\addcontentsline{toc}{section}{附录}
+
+\subsection*{附录 A\hspace{1em}补充数据表}
+\addcontentsline{toc}{subsection}{附录 A 补充数据表}
+\renewcommand{\thetable}{A.\arabic{table}}
+
+本部分汇总正文中受篇幅限制未完整列出的中间结果。表~\ref{tab:a1}~为问题一候选混合效应模型的信息准则比较；表~\ref{tab:a2}~给出问题二不同分组数下的动态规划决策损失；表~\ref{tab:a3}~为问题二达标定义与技术误差设定的单因素敏感性；表~\ref{tab:a4}~展示问题三检测失败情景下的分组推荐时点；表~\ref{tab:a5}~与表~\ref{tab:a6}~分别给出问题四的阳性标签审计与候选特征集的折外性能。
+
+\input{tables/tab_a1_q1_models.tex}
+
+\input{tables/tab_a2_k_cost.tex}
+
+\input{tables/tab_a3_sensitivity.tex}
+
+\input{tables/tab_a4_failure.tex}
+
+\input{tables/tab_a5_label_audit.tex}
+
+\input{tables/tab_a6_q4_ablation.tex}
+
+\clearpage
+\subsection*{附录 B\hspace{1em}核心源代码}
+\addcontentsline{toc}{subsection}{附录 B 核心源代码}
+
+本部分给出模型的核心求解程序。代码已脱敏处理，数据文件以相对路径``附件.xlsx''读入，不含任何本地绝对路径；关键步骤处添加了必要注释。运行环境为 Python 3.11 及以上版本，依赖 numpy、pandas、scipy、statsmodels 等开源库。固定随机种子 \texttt{SEED = 20250904}，全部结果可复现。
+
+\filedivider{nipt\_core.py（核心函数库：数据准备、技术误差估计、区间删失 AFT、动态规划分组）}
+\codeinput{code/nipt_core_annotated.py}
+
+\filedivider{solve\_baseline.py（主流程：问题一至问题四的基线求解串联）}
+\codeinput{code/solve_baseline_annotated.py}
+
+\end{document}

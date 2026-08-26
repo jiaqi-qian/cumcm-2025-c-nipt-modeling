@@ -1,0 +1,7 @@
+{
+  "records": 605,
+  "women": 147,
+  "women_with_any_label_change": 43,
+  "gc_outside_40_60": 220,
+  "raw_unique_reads_spearman": 0.9916988508001914
+}

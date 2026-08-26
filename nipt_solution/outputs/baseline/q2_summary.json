@@ -1,0 +1,177 @@
+{
+  "intervals": {
+    "hard": {
+      "n_total": 267,
+      "counts": {
+        "left": 217,
+        "interval": 43,
+        "right": 7
+      },
+      "state_conflicts": 32,
+      "uncertain_visits": 0,
+      "uninformative_women": 0
+    },
+    "credible_eta025": {
+      "n_total": 267,
+      "counts": {
+        "left": 235,
+        "interval": 16,
+        "right": 9,
+        "uninformative": 7
+      },
+      "state_conflicts": 3,
+      "uncertain_visits": 208,
+      "uninformative_women": 7
+    },
+    "credible_eta001": {
+      "n_total": 267,
+      "counts": {
+        "left": 232,
+        "uninformative": 16,
+        "interval": 11,
+        "right": 8
+      },
+      "state_conflicts": 1,
+      "uncertain_visits": 258,
+      "uninformative_women": 16
+    },
+    "credible_eta005": {
+      "n_total": 267,
+      "counts": {
+        "left": 231,
+        "interval": 20,
+        "right": 11,
+        "uninformative": 5
+      },
+      "state_conflicts": 5,
+      "uncertain_visits": 177,
+      "uninformative_women": 5
+    },
+    "credible_eta01": {
+      "n_total": 267,
+      "counts": {
+        "left": 227,
+        "interval": 26,
+        "right": 11,
+        "uninformative": 3
+      },
+      "state_conflicts": 7,
+      "uncertain_visits": 134,
+      "uninformative_women": 3
+    }
+  },
+  "primary_point_model": {
+    "distribution": "lognormal",
+    "feature_cols": [
+      "first_bmi"
+    ],
+    "coefficients": [
+      2.0470704846991445,
+      0.1170110221658537
+    ],
+    "sigma": 0.5339858058446498,
+    "means": [
+      31.84743720113117
+    ],
+    "scales": [
+      2.9861392871506705
+    ],
+    "neg_loglik": 181.01682230479275,
+    "aic": 368.0336446095855,
+    "bic": 378.7953905847863,
+    "success": true,
+    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+    "n": 267,
+    "ridge": 0.0
+  },
+  "credible_point_model": {
+    "distribution": "loglogistic",
+    "feature_cols": [
+      "first_bmi"
+    ],
+    "coefficients": [
+      1.7125349135824444,
+      0.2477549699106448
+    ],
+    "sigma": 0.3737705259364266,
+    "means": [
+      31.83608812380406
+    ],
+    "scales": [
+      2.9867539205663536
+    ],
+    "neg_loglik": 94.53125914947833,
+    "aic": 195.06251829895666,
+    "bic": 205.74456319200326,
+    "success": true,
+    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+    "n": 260,
+    "ridge": 0.0
+  },
+  "policies": [
+    {
+      "key": "hard_rho80",
+      "selected_k": 5,
+      "raw_cutpoints": [
+        29.43062944343895,
+        31.0253201733632,
+        33.6163850333305,
+        36.09730783
+      ],
+      "rounded_cutpoints": [
+        29.5,
+        31.0,
+        33.5,
+        36.0
+      ],
+      "total_cost": 31.61680033667914,
+      "out_of_window_individuals": 0
+    },
+    {
+      "key": "hard_rho90",
+      "selected_k": 4,
+      "raw_cutpoints": [
+        30.7981037518733,
+        33.6163850333305,
+        36.09730783
+      ],
+      "rounded_cutpoints": [
+        31.0,
+        33.5,
+        36.0
+      ],
+      "total_cost": 30.1018075386625,
+      "out_of_window_individuals": 2
+    },
+    {
+      "key": "credible_rho80",
+      "selected_k": 3,
+      "raw_cutpoints": [
+        33.24811706996741,
+        36.09730783
+      ],
+      "rounded_cutpoints": [
+        33.0,
+        36.0
+      ],
+      "total_cost": 110.57259485479668,
+      "out_of_window_individuals": 2
+    },
+    {
+      "key": "credible_rho90",
+      "selected_k": 4,
+      "raw_cutpoints": [
+        30.68221255328655,
+        32.642336522060546,
+        34.50887419732065
+      ],
+      "rounded_cutpoints": [
+        30.5,
+        32.5,
+        34.5
+      ],
+      "total_cost": 76.31043341793317,
+      "out_of_window_individuals": 4
+    }
+  ]
+}

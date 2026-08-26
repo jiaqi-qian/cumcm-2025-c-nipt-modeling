@@ -1,0 +1,370 @@
+{
+  "ANY": {
+    "track": "record",
+    "feature_set": "core",
+    "model": "elastic",
+    "n_features": 29,
+    "features": [
+      "z13",
+      "z18",
+      "z21",
+      "zx",
+      "x_concentration",
+      "gc13",
+      "gc18",
+      "gc21",
+      "ga",
+      "draw",
+      "age",
+      "height",
+      "weight",
+      "bmi",
+      "gravidity",
+      "parity",
+      "ivf",
+      "iui",
+      "log_raw_reads",
+      "log_unique_reads",
+      "unique_ratio",
+      "map_rate",
+      "duplicate_rate",
+      "filter_rate",
+      "gc",
+      "gc_abs_dev",
+      "gcdev13",
+      "gcdev18",
+      "gcdev21"
+    ],
+    "fixed_params": {
+      "C": 0.2,
+      "l1_ratio": 0.35
+    },
+    "operational_threshold": 0.7469986318827466,
+    "threshold_source": "5-fold grouped OOF on full development data",
+    "threshold_inner_metrics": {
+      "inner_precision": 0.5801324503311259,
+      "inner_recall": 0.4328063241106722,
+      "inner_f1": 0.4957555178268253
+    },
+    "role": "overall_primary_screen",
+    "automatic_diagnosis": false,
+    "locked_version": "Q4-LOCK-2026-08-24-v1",
+    "deployment": "screening_retest_only"
+  },
+  "T13": {
+    "track": "record",
+    "feature_set": "core",
+    "model": "extra_trees",
+    "n_features": 29,
+    "features": [
+      "z13",
+      "z18",
+      "z21",
+      "zx",
+      "x_concentration",
+      "gc13",
+      "gc18",
+      "gc21",
+      "ga",
+      "draw",
+      "age",
+      "height",
+      "weight",
+      "bmi",
+      "gravidity",
+      "parity",
+      "ivf",
+      "iui",
+      "log_raw_reads",
+      "log_unique_reads",
+      "unique_ratio",
+      "map_rate",
+      "duplicate_rate",
+      "filter_rate",
+      "gc",
+      "gc_abs_dev",
+      "gcdev13",
+      "gcdev18",
+      "gcdev21"
+    ],
+    "fixed_params": {
+      "n_estimators": 250,
+      "max_depth": null,
+      "min_samples_leaf": 3,
+      "min_samples_split": 6,
+      "max_features": 0.7
+    },
+    "operational_threshold": 0.2772301590260318,
+    "threshold_source": "5-fold grouped OOF on full development data",
+    "threshold_inner_metrics": {
+      "inner_precision": 0.26348999129677975,
+      "inner_recall": 0.46756756756756745,
+      "inner_f1": 0.3370442527136097
+    },
+    "role": "nonlinear_auxiliary_subtype",
+    "automatic_diagnosis": false,
+    "locked_version": "Q4-LOCK-2026-08-24-v1",
+    "deployment": "screening_retest_only"
+  },
+  "T18": {
+    "track": "record",
+    "feature_set": "engineered",
+    "model": "elastic",
+    "n_features": 64,
+    "params": {
+      "C": 0.08611509492888468,
+      "l1_ratio": 0.162009535711923
+    },
+    "tuning_objective": 0.5265439488985216,
+    "threshold": 0.7447644705477124,
+    "threshold_inner_metrics": {
+      "inner_precision": 0.5575221238938053,
+      "inner_recall": 0.4682080924855492,
+      "inner_f1": 0.5089766606822262
+    },
+    "full_tuning_trials": [
+      {
+        "trial": 0,
+        "objective": 0.4271505656,
+        "pr_auc_w": 0.3890853746,
+        "inner_precision": 0.4215780998,
+        "inner_recall": 0.5404624277,
+        "inner_f1": 0.4736746879,
+        "params": "{\"C\": 0.9614537846444674, \"l1_ratio\": 0.09822425324581008}"
+      },
+      {
+        "trial": 1,
+        "objective": 0.4248823221,
+        "pr_auc_w": 0.3736713905,
+        "inner_precision": 0.4140816621,
+        "inner_recall": 0.5924855491,
+        "inner_f1": 0.4874734607,
+        "params": "{\"C\": 17.991866770545784, \"l1_ratio\": 0.2585322046704909}"
+      },
+      {
+        "trial": 2,
+        "objective": 0.4618964945,
+        "pr_auc_w": 0.4095655275,
+        "inner_precision": 0.5425999122,
+        "inner_recall": 0.5101156069,
+        "inner_f1": 0.5258565652,
+        "params": "{\"C\": 4.721912940622742, \"l1_ratio\": 0.7853579231124611}"
+      },
+      {
+        "trial": 3,
+        "objective": 0.424344042,
+        "pr_auc_w": 0.3951847712,
+        "inner_precision": 0.5515151515,
+        "inner_recall": 0.3945086705,
+        "inner_f1": 0.4599831508,
+        "params": "{\"C\": 0.025022329689846037, \"l1_ratio\": 0.4802657617633289}"
+      },
+      {
+        "trial": 4,
+        "objective": 0.3985907666,
+        "pr_auc_w": 0.3523260421,
+        "inner_precision": 0.4137115839,
+        "inner_recall": 0.5057803468,
+        "inner_f1": 0.455136541,
+        "params": "{\"C\": 12.813237062972856, \"l1_ratio\": 0.5537899793085488}"
+      },
+      {
+        "trial": 5,
+        "objective": 0.4624242259,
+        "pr_auc_w": 0.4132349647,
+        "inner_precision": 0.4777625727,
+        "inner_recall": 0.5765895954,
+        "inner_f1": 0.5225444341,
+        "params": "{\"C\": 0.8606132955759982, \"l1_ratio\": 0.6124831786161077}"
+      },
+      {
+        "trial": 6,
+        "objective": 0.382115623,
+        "pr_auc_w": 0.3632278504,
+        "inner_precision": 0.447888028,
+        "inner_recall": 0.3699421965,
+        "inner_f1": 0.4052006783,
+        "params": "{\"C\": 0.008542352835827473, \"l1_ratio\": 0.5237404931341869}"
+      },
+      {
+        "trial": 7,
+        "objective": 0.4875066284,
+        "pr_auc_w": 0.44290613,
+        "inner_precision": 0.4877807133,
+        "inner_recall": 0.6098265896,
+        "inner_f1": 0.5420183486,
+        "params": "{\"C\": 0.7133043899644864, \"l1_ratio\": 0.2688385475764581}"
+      },
+      {
+        "trial": 8,
+        "objective": 0.5265439489,
+        "pr_auc_w": 0.5078749865,
+        "inner_precision": 0.5525161829,
+        "inner_recall": 0.5462427746,
+        "inner_f1": 0.5493615696,
+        "params": "{\"C\": 0.08611509492888468, \"l1_ratio\": 0.162009535711923}"
+      },
+      {
+        "trial": 9,
+        "objective": 0.4819336841,
+        "pr_auc_w": 0.4774972815,
+        "inner_precision": 0.3979351803,
+        "inner_recall": 0.6286127168,
+        "inner_f1": 0.4873559539,
+        "params": "{\"C\": 0.12839414176212116, \"l1_ratio\": 0.3901262321998178}"
+      },
+      {
+        "trial": 10,
+        "objective": 0.4485894333,
+        "pr_auc_w": 0.4052478333,
+        "inner_precision": 0.5459183673,
+        "inner_recall": 0.4638728324,
+        "inner_f1": 0.5015625,
+        "params": "{\"C\": 0.06304490626967532, \"l1_ratio\": 0.025019712581709486}"
+      },
+      {
+        "trial": 11,
+        "objective": 0.377544282,
+        "pr_auc_w": 0.3466741339,
+        "inner_precision": 0.4619469027,
+        "inner_recall": 0.3771676301,
+        "inner_f1": 0.415274463,
+        "params": "{\"C\": 0.05617553101320708, \"l1_ratio\": 0.9543564806331191}"
+      },
+      {
+        "trial": 12,
+        "objective": 0.4417356115,
+        "pr_auc_w": 0.4123381493,
+        "inner_precision": 0.4425854174,
+        "inner_recall": 0.5187861272,
+        "inner_f1": 0.477665843,
+        "params": "{\"C\": 1.0813426735442235, \"l1_ratio\": 0.3352340535790579}"
+      },
+      {
+        "trial": 13,
+        "objective": 0.4111199071,
+        "pr_auc_w": 0.3991912612,
+        "inner_precision": 0.3257418154,
+        "inner_recall": 0.6141618497,
+        "inner_f1": 0.4256993632,
+        "params": "{\"C\": 0.010798297845025364, \"l1_ratio\": 0.14509727633176814}"
+      },
+      {
+        "trial": 14,
+        "objective": 0.4498846625,
+        "pr_auc_w": 0.4294227907,
+        "inner_precision": 0.5776397516,
+        "inner_recall": 0.4031791908,
+        "inner_f1": 0.474893617,
+        "params": "{\"C\": 0.10367183797153785, \"l1_ratio\": 0.1488852267516849}"
+      },
+      {
+        "trial": 15,
+        "objective": 0.4529361643,
+        "pr_auc_w": 0.4291147043,
+        "inner_precision": 0.4888558692,
+        "inner_recall": 0.475433526,
+        "inner_f1": 0.4820512821,
+        "params": "{\"C\": 6.296568716003507, \"l1_ratio\": 0.031784970586565375}"
+      },
+      {
+        "trial": 16,
+        "objective": 0.4597681028,
+        "pr_auc_w": 0.4565486579,
+        "inner_precision": 0.4401780746,
+        "inner_recall": 0.4898843931,
+        "inner_f1": 0.46370298,
+        "params": "{\"C\": 0.23574062492038247, \"l1_ratio\": 0.18308431460514762}"
+      },
+      {
+        "trial": 17,
+        "objective": 0.4395122221,
+        "pr_auc_w": 0.4340104917,
+        "inner_precision": 0.5872641509,
+        "inner_recall": 0.3598265896,
+        "inner_f1": 0.4462365591,
+        "params": "{\"C\": 0.8233470955482042, \"l1_ratio\": 0.9671996489386705}"
+      },
+      {
+        "trial": 18,
+        "objective": 0.5236116896,
+        "pr_auc_w": 0.5168306379,
+        "inner_precision": 0.5277382646,
+        "inner_recall": 0.5361271676,
+        "inner_f1": 0.5318996416,
+        "params": "{\"C\": 0.18695086956694842, \"l1_ratio\": 0.5987329003546625}"
+      },
+      {
+        "trial": 19,
+        "objective": 0.4631715189,
+        "pr_auc_w": 0.4336961938,
+        "inner_precision": 0.5185761958,
+        "inner_recall": 0.4812138728,
+        "inner_f1": 0.4991969162,
+        "params": "{\"C\": 0.12056090729221668, \"l1_ratio\": 0.6568324175825189}"
+      }
+    ],
+    "stability_parameter_source": "predeclared fixed anchor; Optuna parameters are evaluated only in nested CV",
+    "stability_params": {
+      "C": 0.2,
+      "l1_ratio": 0.35
+    },
+    "role": "primary_subtype_screen",
+    "automatic_diagnosis": false,
+    "locked_version": "Q4-LOCK-2026-08-24-v1",
+    "operational_threshold": 0.7447644705477124,
+    "deployment": "screening_retest_only"
+  },
+  "T21": {
+    "track": "record",
+    "feature_set": "core",
+    "model": "lda",
+    "n_features": 29,
+    "features": [
+      "z13",
+      "z18",
+      "z21",
+      "zx",
+      "x_concentration",
+      "gc13",
+      "gc18",
+      "gc21",
+      "ga",
+      "draw",
+      "age",
+      "height",
+      "weight",
+      "bmi",
+      "gravidity",
+      "parity",
+      "ivf",
+      "iui",
+      "log_raw_reads",
+      "log_unique_reads",
+      "unique_ratio",
+      "map_rate",
+      "duplicate_rate",
+      "filter_rate",
+      "gc",
+      "gc_abs_dev",
+      "gcdev13",
+      "gcdev18",
+      "gcdev21"
+    ],
+    "fixed_params": {
+      "shrinkage": "auto"
+    },
+    "operational_threshold": null,
+    "threshold_source": "5-fold grouped OOF on full development data",
+    "threshold_inner_metrics": {
+      "inner_precision": 1.0,
+      "inner_recall": 0.16666666666666663,
+      "inner_f1": 0.2857142857142857
+    },
+    "role": "retest_risk_ranking_only",
+    "automatic_diagnosis": false,
+    "locked_version": "Q4-LOCK-2026-08-24-v1",
+    "deployment": "ranking_only_no_binary_call",
+    "threshold": null
+  }
+}

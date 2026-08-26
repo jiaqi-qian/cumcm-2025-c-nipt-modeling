@@ -1,0 +1,129 @@
+\documentclass[UTF8,fontset=none,11pt,a4paper,oneside]{ctexart}
+
+\usepackage[a4paper,top=2.05cm,bottom=2.05cm,left=2.18cm,right=2.18cm,
+            headheight=13.6pt,headsep=5mm,footskip=10mm]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{booktabs,longtable,array,tabularx,makecell,multirow,threeparttable}
+\usepackage{graphicx,adjustbox}
+\usepackage{caption,subcaption,float,placeins}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,backgrounds,calc,shapes.geometric}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{etoolbox}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{bookmark}
+
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Menlo}
+\setCJKmainfont[BoldFont=Heiti SC]{Songti SC}
+\setCJKsansfont{Heiti SC}
+\setCJKmonofont{STFangsong}
+\newCJKfontfamily\songti{Songti SC}
+\newCJKfontfamily\heiti{Heiti SC}
+\newCJKfontfamily\fangsong{STFangsong}
+
+\definecolor{MaleBlue}{HTML}{2D75A8}
+\definecolor{FemaleRed}{HTML}{C9564B}
+\definecolor{Slate}{HTML}{66788A}
+\definecolor{Gold}{HTML}{D79A25}
+\definecolor{LinkBlue}{HTML}{1D5F86}
+
+\hypersetup{
+  unicode=true,
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=LinkBlue,
+  pdfborder={0 0 0},
+  pdftitle={$title$}
+}
+
+\setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{2}
+\ctexset{
+  section={
+    format=\centering\heiti\zihao{3},
+    beforeskip=1.25ex plus .35ex minus .2ex,
+    afterskip=.85ex plus .25ex
+  },
+  subsection={
+    format=\heiti\zihao{4},
+    beforeskip=1.05ex plus .3ex minus .15ex,
+    afterskip=.45ex plus .15ex
+  },
+  subsubsection={
+    format=\heiti\zihao{-4},
+    beforeskip=.8ex plus .2ex,
+    afterskip=.3ex
+  }
+}
+
+\setstretch{1.17}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt plus .15pt}
+\setlength{\emergencystretch}{3em}
+\raggedbottom
+
+\captionsetup{
+  font={small,stretch=1.08},
+  labelfont=bf,
+  labelsep=quad,
+  justification=centering,
+  singlelinecheck=true,
+  skip=5pt
+}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+
+\setlength{\LTleft}{\fill}
+\setlength{\LTright}{\fill}
+\setlength{\tabcolsep}{4.2pt}
+\renewcommand{\arraystretch}{1.12}
+\AtBeginEnvironment{longtable}{\scriptsize\setlength{\tabcolsep}{2.1pt}}
+\AtBeginEnvironment{tabular}{\small}
+
+\setlist{nosep,leftmargin=2.2em,labelsep=.55em}
+\setlist[enumerate]{itemsep=.25ex,topsep=.35ex}
+\setlist[itemize]{itemsep=.2ex,topsep=.3ex}
+
+\renewcommand{\topfraction}{0.93}
+\renewcommand{\bottomfraction}{0.86}
+\renewcommand{\textfraction}{0.045}
+\renewcommand{\floatpagefraction}{0.82}
+\renewcommand{\dbltopfraction}{0.93}
+\renewcommand{\dblfloatpagefraction}{0.82}
+\setcounter{topnumber}{4}
+\setcounter{bottomnumber}{3}
+\setcounter{totalnumber}{6}
+\setlength{\textfloatsep}{8pt plus 2pt minus 3pt}
+\setlength{\floatsep}{7pt plus 2pt minus 2pt}
+\setlength{\intextsep}{7pt plus 2pt minus 2pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\newcommand{\pandocbounded}[1]{#1}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+
+\begin{document}
+\pagenumbering{Roman}
+
+\begin{center}
+  {\heiti\fontsize{20pt}{27pt}\selectfont $title$\par}
+\end{center}
+\vspace{0.65em}
+
+$body$
+
+\end{document}

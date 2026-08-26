@@ -1,0 +1,14 @@
+{
+  "prediction_rows": 96800,
+  "expected_prediction_rows": 96800,
+  "all_target_variant_seed_blocks_have_605_records": true,
+  "target_variant_seed_index_is_unique": true,
+  "all_scores_finite": true,
+  "all_subtype_thresholds_finite": true,
+  "all_high_thresholds_at_least_low": true,
+  "bootstrap_replicates_per_target_variant": 500,
+  "bootstrap_rows": 12000,
+  "woman_overlap_between_train_test": 0,
+  "test_used_for_any_fit_step": false,
+  "all_checks_pass": true
+}

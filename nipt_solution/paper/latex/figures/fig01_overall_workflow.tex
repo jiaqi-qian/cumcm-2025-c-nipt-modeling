@@ -1,0 +1,72 @@
+\begin{tikzpicture}[
+  font=\small,
+  >=Latex,
+  line width=0.75pt,
+  node distance=7mm and 7mm,
+  data/.style={draw=#1!78!black, fill=#1!9, rounded corners=2pt,
+               minimum height=9mm, text width=27mm, align=center,
+               inner xsep=3pt, inner ysep=3pt},
+  model/.style={draw=#1!78!black, fill=#1!8, rounded corners=2pt,
+                minimum height=12mm, text width=29mm, align=center,
+                inner xsep=3pt, inner ysep=3pt},
+  decision/.style={draw=#1!85!black, fill=#1!15, rounded corners=5pt,
+                   minimum height=12mm, text width=29mm, align=center,
+                   inner xsep=3pt, inner ysep=3pt, line width=1.0pt},
+  arrow/.style={->, color=black!68, line width=0.85pt},
+  male/.style={->, color=MaleBlue!88!black, line width=1.15pt},
+  female/.style={->, color=FemaleRed!88!black, line width=1.15pt},
+  note/.style={font=\scriptsize, text=black!68, align=center}
+]
+  \node[data=Slate] (record) {检测记录层\\原始浓度、Z 值与质量字段};
+  \node[data=Slate, right=of record] (visit) {采血事件层\\聚合同次技术复测};
+  \node[data=Slate, right=of visit] (woman) {孕妇层\\纵向访视与等总权重};
+  \draw[arrow] (record) -- node[above,note]{复测识别} (visit);
+  \draw[arrow] (visit) -- node[above,note]{事件排序} (woman);
+
+  \node[data=Gold, below=of visit] (error) {技术测量误差\\$\widehat\sigma_{tech}=0.00613$};
+  \draw[arrow] (visit) -- (error);
+
+  \node[model=MaleBlue, below left=17mm and 27mm of error] (q1)
+    {问题一：浓度关系\\logit 变换、18 周分段\\随机截距与 BMI 分解};
+  \node[model=MaleBlue, right=of q1] (q2)
+    {问题二：达标时间\\区间删失对数正态 AFT\\个体可靠分位时点};
+  \node[model=MaleBlue, right=of q2] (dp)
+    {分组排程\\连续 BMI 区间\\分位损失与动态规划};
+  \node[model=MaleBlue, right=of dp] (q3)
+    {问题三：增量检验\\嵌套多因素 AFT\\失败与重测情景};
+  \node[decision=MaleBlue, right=of q3] (maleout)
+    {男胎决策\\两档可靠度时点\\高 BMI 个体化复检};
+
+  \draw[male] (q1) -- node[above,note]{浓度变化依据} (q2);
+  \draw[male] (q2) -- node[above,note]{个体时点} (dp);
+  \draw[male] (dp) -- node[above,note]{固定基准} (q3);
+  \draw[male] (q3) -- node[above,note]{保留或修订} (maleout);
+  \draw[arrow] (error.south) |- (q1.north);
+  \draw[arrow] (error.south) |- (q2.north);
+  \draw[arrow] (woman.south) |- (q3.north);
+
+  \node[model=FemaleRed, below=17mm of q1] (label)
+    {问题四：标签重构\\ANY 与 T13/T18/T21\\可共存多标签};
+  \node[model=FemaleRed, right=of label] (weight)
+    {孕妇等权评价\\$w_{ir}=1/m_i$\\嵌套孕妇分组};
+  \node[model=FemaleRed, right=of weight] (models)
+    {任务自适应模型\\ANY、T18：弹性网络\\T13：极端随机树\\T21：收缩 LDA};
+  \node[model=FemaleRed, right=of models] (threshold)
+    {折外风险分数\\F1 阈值与 PR-AUC\\时间顺序留出};
+  \node[decision=FemaleRed, right=of threshold] (femaleout)
+    {女胎决策\\总体异常复核\\分型触发与复检排序};
+
+  \draw[female] (label) -- (weight);
+  \draw[female] (weight) -- (models);
+  \draw[female] (models) -- (threshold);
+  \draw[female] (threshold) -- (femaleout);
+  \draw[arrow] (woman.south) |- (weight.north);
+
+  \begin{scope}[on background layer]
+    \node[fit=(q1)(q2)(dp)(q3)(maleout), fill=MaleBlue!3, draw=MaleBlue!25,
+          rounded corners=5pt, inner sep=5pt, label={[MaleBlue!85!black]above left:\bfseries 男胎：从浓度到检测时点}] {};
+    \node[fit=(label)(weight)(models)(threshold)(femaleout), fill=FemaleRed!3,
+          draw=FemaleRed!25, rounded corners=5pt, inner sep=5pt,
+          label={[FemaleRed!85!black]above left:\bfseries 女胎：从多标签到复检规则}] {};
+  \end{scope}
+\end{tikzpicture}

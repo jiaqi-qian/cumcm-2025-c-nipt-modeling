@@ -1,0 +1,51 @@
+{
+  "method": "official-style QC + robust MAD scaling + QI strata + logistic regression + dual thresholds",
+  "input_sha256": "14827156218bd4f7e4f16db4aa6d9f757c6648379e038ae6c6b58383648614af",
+  "seeds": 20,
+  "outer_cv": "StratifiedGroupKFold(4), group=pregnant woman",
+  "inner_cv": "StratifiedGroupKFold(3), group=pregnant woman",
+  "c_grid": [
+    0.03,
+    0.1,
+    0.3,
+    1.0,
+    3.0,
+    10.0
+  ],
+  "low_threshold_target_specificity": 0.99,
+  "high_threshold_target_specificity": 0.995,
+  "threshold_source": "inner-OOF negative scores inside each outer training fold",
+  "QC_source": "outer/inner training fold only",
+  "robust_scaler_source": "QC-passing records in training fold only",
+  "QI_cutpoint_source": "20th/80th percentile of training-fold QI",
+  "published_fixed_threshold_test": "sensitivity audit on raw Excel Z; never selected as the main model",
+  "bootstrap_replicates": 500,
+  "leakage_assertions": {
+    "woman_overlap_between_train_test": 0,
+    "test_data_used_for_QC_quantiles": false,
+    "test_data_used_for_robust_scaling": false,
+    "test_data_used_for_QI_cutpoints": false,
+    "test_data_used_for_C_selection": false,
+    "test_data_used_for_probability_thresholds": false,
+    "labels_or_health_outcome_used_as_features": false
+  },
+  "data_audit": {
+    "records": 605,
+    "women": 147,
+    "positive_records": {
+      "ANY": 67,
+      "T13": 23,
+      "T18": 46,
+      "T21": 13
+    },
+    "official_slide_claim": {
+      "records": 604,
+      "T13_positive": 24,
+      "T18_positive": 46,
+      "T21_positive": 13,
+      "QC_pass": 501
+    },
+    "source_difference_flag": true
+  },
+  "runtime_seconds": 878.237544298172
+}

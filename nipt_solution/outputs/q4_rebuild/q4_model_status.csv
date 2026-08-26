@@ -1,0 +1,5 @@
+target,role,promotion,include_in_main_method,automatic_diagnosis
+ANY,总体异常主筛,保留：中等判别力，阳性需复检,1,0
+T13,辅助风险排序,辅助：机器学习有增益但稳定性有限,0,0
+T18,主要分型模型,晋级：多变量统计模型相对单Z值增益显著,1,0
+T21,仅供复检排序,不晋级：精确率和F1过低，不自动判阳,0,0

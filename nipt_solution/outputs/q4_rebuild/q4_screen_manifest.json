@@ -1,0 +1,39 @@
+{
+  "seed_base": 20260824,
+  "seeds": 2,
+  "outer_cv": "StratifiedGroupKFold(4), group=孕妇代码",
+  "inner_threshold_cv": "StratifiedGroupKFold(3), group=孕妇代码",
+  "threshold_objective": "weighted F1; threshold chosen using inner OOF only",
+  "model_count": 22,
+  "data_audit": {
+    "records": 605,
+    "women": 147,
+    "date_min": "2023-03-05T00:00:00",
+    "date_max": "2024-07-08T00:00:00",
+    "positive_records": {
+      "ANY": 67,
+      "T13": 23,
+      "T18": 46,
+      "T21": 13
+    },
+    "positive_women": {
+      "ANY": 44,
+      "T13": 18,
+      "T18": 30,
+      "T21": 12
+    },
+    "within_woman_label_changes": {
+      "ANY": 43,
+      "T13": 17,
+      "T18": 29,
+      "T21": 12
+    },
+    "ignored_as_features": [
+      "序号/row_id",
+      "孕妇代码/code",
+      "检测日期/date (only chronological robustness split)",
+      "染色体的非整倍体/all labels",
+      "胎儿是否健康"
+    ]
+  }
+}

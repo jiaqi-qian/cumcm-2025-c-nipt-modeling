@@ -1,0 +1,22 @@
+{
+  "male_rows": 1082,
+  "male_women": 267,
+  "male_visits": 1022,
+  "female_rows": 605,
+  "female_women": 147,
+  "repeat_groups": 39,
+  "repeat_df": 60,
+  "strict_repeat_groups": 18,
+  "strict_repeat_df": 18,
+  "sigma_tech": 0.006126544983671672,
+  "sigma_tech_strict": 0.004733604810078214,
+  "pairwise_abs_diff_median": 0.004701757000000001,
+  "y_range": [
+    0.010003887,
+    0.234217554
+  ],
+  "ga_range": [
+    11.0,
+    29.0
+  ]
+}

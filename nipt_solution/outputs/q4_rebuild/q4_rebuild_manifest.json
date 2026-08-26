@@ -1,0 +1,67 @@
+{
+  "completed_at_unix": 1787557165.5489502,
+  "seed_base": 20260824,
+  "nested_seeds": 3,
+  "optuna_trials_per_outer_fold": 10,
+  "stability_seeds": 100,
+  "ablation_seeds": 10,
+  "cluster_bootstrap_replicates": 500,
+  "primary_metrics": "woman-balanced record-level precision/recall/F1",
+  "outer_validation": "StratifiedGroupKFold by pregnant woman",
+  "hyperparameter_tuning": "Optuna only inside each outer training fold",
+  "threshold_selection": "F1 threshold only from inner OOF predictions",
+  "record_answer_source": "winner's strictly nested OOF predictions averaged across nested seeds",
+  "stability_parameter_source": "predeclared fixed anchor, not full-data Optuna tuning",
+  "chronological_robustness": "last 20% of women by first collection date held out",
+  "leakage_assertions": {
+    "group_overlap": 0,
+    "labels_in_features": false,
+    "row_id_or_code_in_features": false,
+    "future_measurements_in_record_longitudinal_features": false,
+    "test_fold_used_for_threshold": false,
+    "test_fold_used_for_optuna": false
+  },
+  "data_audit": {
+    "records": 605,
+    "women": 147,
+    "date_min": "2023-03-05T00:00:00",
+    "date_max": "2024-07-08T00:00:00",
+    "positive_records": {
+      "ANY": 67,
+      "T13": 23,
+      "T18": 46,
+      "T21": 13
+    },
+    "all_negative_accuracy": {
+      "ANY": 0.8892561983471075,
+      "T13": 0.9619834710743802,
+      "T18": 0.9239669421487603,
+      "T21": 0.9785123966942149
+    },
+    "all_negative_positive_recall": {
+      "ANY": 0.0,
+      "T13": 0.0,
+      "T18": 0.0,
+      "T21": 0.0
+    },
+    "positive_women": {
+      "ANY": 44,
+      "T13": 18,
+      "T18": 30,
+      "T21": 12
+    },
+    "within_woman_label_changes": {
+      "ANY": 43,
+      "T13": 17,
+      "T18": 29,
+      "T21": 12
+    },
+    "ignored_as_features": [
+      "序号/row_id",
+      "孕妇代码/code",
+      "检测日期/date (only chronological robustness split)",
+      "染色体的非整倍体/all labels",
+      "胎儿是否健康"
+    ]
+  }
+}

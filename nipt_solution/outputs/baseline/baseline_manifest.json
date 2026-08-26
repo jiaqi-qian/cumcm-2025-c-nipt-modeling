@@ -1,0 +1,313 @@
+{
+  "metadata": {
+    "seed": 20250904,
+    "data": "附件.xlsx",
+    "data_sha256": "14827156218bd4f7e4f16db4aa6d9f757c6648379e038ae6c6b58383648614af",
+    "python": "3.13.5 (v3.13.5:6cb20a219a8, Jun 11 2025, 12:23:45) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "elapsed_seconds": 6.50002908706665
+  },
+  "q1": {
+    "chosen_model": "ga_hinge_18",
+    "centers": {
+      "ga": 16.671372658652505,
+      "first_bmi": 31.826071566847453,
+      "age": 28.897260273972602,
+      "height": 161.0503913894325
+    },
+    "n_visits": 1022,
+    "n_women": 267,
+    "aic": 801.4521200370173,
+    "bic": 835.9587374323628,
+    "loglik": -393.72606001850863,
+    "converged": true,
+    "warnings": [],
+    "random_intercept_var": 0.18253835339753285,
+    "random_intercept_sd": 0.4272450741641533,
+    "residual_var_logit": 0.06735870954810201,
+    "residual_sd_logit": 0.25953556509292136,
+    "icc_logit": 0.7304541767953635,
+    "random_slope_sensitivity": {
+      "aic": 718.5486561682783,
+      "bic": 762.9143071051511,
+      "loglik": -350.27432808413914,
+      "converged": true,
+      "cov_re": [
+        [
+          0.19154859563445562,
+          0.0007471723773796177
+        ],
+        [
+          0.0007471723773796177,
+          0.0012056579587594743
+        ]
+      ],
+      "residual_var": 0.04701193861939321,
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ]
+    }
+  },
+  "q2": {
+    "intervals": {
+      "hard": {
+        "n_total": 267,
+        "counts": {
+          "left": 217,
+          "interval": 43,
+          "right": 7
+        },
+        "state_conflicts": 32,
+        "uncertain_visits": 0,
+        "uninformative_women": 0
+      },
+      "credible_eta025": {
+        "n_total": 267,
+        "counts": {
+          "left": 235,
+          "interval": 16,
+          "right": 9,
+          "uninformative": 7
+        },
+        "state_conflicts": 3,
+        "uncertain_visits": 208,
+        "uninformative_women": 7
+      },
+      "credible_eta001": {
+        "n_total": 267,
+        "counts": {
+          "left": 232,
+          "uninformative": 16,
+          "interval": 11,
+          "right": 8
+        },
+        "state_conflicts": 1,
+        "uncertain_visits": 258,
+        "uninformative_women": 16
+      },
+      "credible_eta005": {
+        "n_total": 267,
+        "counts": {
+          "left": 231,
+          "interval": 20,
+          "right": 11,
+          "uninformative": 5
+        },
+        "state_conflicts": 5,
+        "uncertain_visits": 177,
+        "uninformative_women": 5
+      },
+      "credible_eta01": {
+        "n_total": 267,
+        "counts": {
+          "left": 227,
+          "interval": 26,
+          "right": 11,
+          "uninformative": 3
+        },
+        "state_conflicts": 7,
+        "uncertain_visits": 134,
+        "uninformative_women": 3
+      }
+    },
+    "primary_point_model": {
+      "distribution": "lognormal",
+      "feature_cols": [
+        "first_bmi"
+      ],
+      "coefficients": [
+        2.0470704846991445,
+        0.1170110221658537
+      ],
+      "sigma": 0.5339858058446498,
+      "means": [
+        31.84743720113117
+      ],
+      "scales": [
+        2.9861392871506705
+      ],
+      "neg_loglik": 181.01682230479275,
+      "aic": 368.0336446095855,
+      "bic": 378.7953905847863,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "n": 267,
+      "ridge": 0.0
+    },
+    "credible_point_model": {
+      "distribution": "loglogistic",
+      "feature_cols": [
+        "first_bmi"
+      ],
+      "coefficients": [
+        1.7125349135824444,
+        0.2477549699106448
+      ],
+      "sigma": 0.3737705259364266,
+      "means": [
+        31.83608812380406
+      ],
+      "scales": [
+        2.9867539205663536
+      ],
+      "neg_loglik": 94.53125914947833,
+      "aic": 195.06251829895666,
+      "bic": 205.74456319200326,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "n": 260,
+      "ridge": 0.0
+    },
+    "policies": [
+      {
+        "key": "hard_rho80",
+        "selected_k": 5,
+        "raw_cutpoints": [
+          29.43062944343895,
+          31.0253201733632,
+          33.6163850333305,
+          36.09730783
+        ],
+        "rounded_cutpoints": [
+          29.5,
+          31.0,
+          33.5,
+          36.0
+        ],
+        "total_cost": 31.61680033667914,
+        "out_of_window_individuals": 0
+      },
+      {
+        "key": "hard_rho90",
+        "selected_k": 4,
+        "raw_cutpoints": [
+          30.7981037518733,
+          33.6163850333305,
+          36.09730783
+        ],
+        "rounded_cutpoints": [
+          31.0,
+          33.5,
+          36.0
+        ],
+        "total_cost": 30.1018075386625,
+        "out_of_window_individuals": 2
+      },
+      {
+        "key": "credible_rho80",
+        "selected_k": 3,
+        "raw_cutpoints": [
+          33.24811706996741,
+          36.09730783
+        ],
+        "rounded_cutpoints": [
+          33.0,
+          36.0
+        ],
+        "total_cost": 110.57259485479668,
+        "out_of_window_individuals": 2
+      },
+      {
+        "key": "credible_rho90",
+        "selected_k": 4,
+        "raw_cutpoints": [
+          30.68221255328655,
+          32.642336522060546,
+          34.50887419732065
+        ],
+        "rounded_cutpoints": [
+          30.5,
+          32.5,
+          34.5
+        ],
+        "total_cost": 76.31043341793317,
+        "out_of_window_individuals": 4
+      }
+    ]
+  },
+  "q3": {
+    "best_bic_model": "bmi_only",
+    "bmi_only": {
+      "distribution": "lognormal",
+      "feature_cols": [
+        "first_bmi"
+      ],
+      "coefficients": [
+        2.0470704846991445,
+        0.1170110221658537
+      ],
+      "sigma": 0.5339858058446498,
+      "means": [
+        31.84743720113117
+      ],
+      "scales": [
+        2.9861392871506705
+      ],
+      "neg_loglik": 181.01682230479275,
+      "aic": 368.0336446095855,
+      "bic": 378.7953905847863,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "n": 267,
+      "ridge": 0.0
+    },
+    "best": {
+      "distribution": "lognormal",
+      "feature_cols": [
+        "first_bmi"
+      ],
+      "coefficients": [
+        2.0470704846991445,
+        0.1170110221658537
+      ],
+      "sigma": 0.5339858058446498,
+      "means": [
+        31.84743720113117
+      ],
+      "scales": [
+        2.9861392871506705
+      ],
+      "neg_loglik": 181.01682230479275,
+      "aic": 368.0336446095855,
+      "bic": 378.7953905847863,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "n": 267,
+      "ridge": 0.0
+    },
+    "bic_improvement_vs_bmi": 0.0,
+    "aic_improvement_vs_bmi": 0.0
+  },
+  "q4_audit": {
+    "records": 605,
+    "women": 147,
+    "abnormal_records": 67,
+    "abnormal_women": 44,
+    "gc_outside_40_60": 220,
+    "labels": {
+      "T13": {
+        "positive_records": 23,
+        "positive_women": 18,
+        "z_ge_3_sensitivity": 0.043478260869565216,
+        "abs_z_ge_3_sensitivity": 0.043478260869565216,
+        "positive_z_min": -2.807104139,
+        "positive_z_max": 3.808298807
+      },
+      "T18": {
+        "positive_records": 46,
+        "positive_women": 30,
+        "z_ge_3_sensitivity": 0.0,
+        "abs_z_ge_3_sensitivity": 0.0,
+        "positive_z_min": -0.904459909,
+        "positive_z_max": 2.974066103
+      },
+      "T21": {
+        "positive_records": 13,
+        "positive_women": 12,
+        "z_ge_3_sensitivity": 0.0,
+        "abs_z_ge_3_sensitivity": 0.0,
+        "positive_z_min": -2.394334961,
+        "positive_z_max": 1.329150733
+      }
+    }
+  }
+}

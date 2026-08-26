@@ -1,0 +1,4 @@
+label,model,records,positive_records,coverage,retest_rate,sensitivity_all,specificity_all,selective_sensitivity,selective_specificity,selective_accuracy,definitive_positive_records,definitive_negative_records,retest_records
+T13,elastic_full,605,23,0.05226757369614512,0.9477324263038549,0.0,0.05455621301775147,,1.0,1.0,0,32,573
+T18,elastic_full,605,46,0.20334197170931867,0.7966580282906814,0.1300578034682081,0.19949264154480698,0.7086614173228346,0.9729969139330211,0.9542787350981069,9,112,484
+T21,elastic_full,605,13,0.0,1.0,0.0,0.0,,,,0,0,605

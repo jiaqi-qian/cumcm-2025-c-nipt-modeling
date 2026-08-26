@@ -1,0 +1,31 @@
+# macOS and Python caches
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Local environments and credentials
+.venv/
+venv/
+.env
+.env.*
+
+# Rebuildable LaTeX intermediates
+nipt_solution/paper/latex/build/
+nipt_solution/paper/latex/build_template/
+nipt_solution/paper/latex/appendix/build/
+nipt_solution/paper/latex/appendix/ref_appendix.pdf
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz
+*.toc
+*.xdv
+
+# Runtime scratch files
+*.tmp
+*.bak
+*~

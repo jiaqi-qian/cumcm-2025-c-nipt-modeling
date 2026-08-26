@@ -1,0 +1,28 @@
+{
+  "seed": 20260824,
+  "data": "附件.xlsx",
+  "figures": {
+    "fig01_technical_route_bw": "四问误差传递与决策输出的黑白技术路线图",
+    "fig02_q1_joint_density": "孕周—Y 浓度的六边形密度、BMI 效应曲线与边缘分布",
+    "fig03_q1_response_surface": "孕周×BMI 三维响应面及二维支持域投影",
+    "fig04_q1_parameter_ml_evidence": "混合模型参数重抽样区间与预测误差平面",
+    "fig05_q2_tau_raincloud": "两档可靠度下个体保守时点的配对雨云图",
+    "fig06_q2_policy_alluvial": "BMI 分组到两档推荐时点的守恒流图",
+    "fig07_q2_optimization_sensitivity": "分组数帕累托前沿与阈值斜率图",
+    "fig08_q3_increment_evidence": "多因素 AFT 误差平面与配对增量区间",
+    "fig09_q4_label_upset": "女胎多标签交集 UpSet 图",
+    "fig10_q4_weighted_pca": "孕妇等权 PCA 双标图与边缘密度",
+    "fig11_q4_score_threshold_landscape": "折外风险分数的正负样本镜像密度与阈值",
+    "fig12_q4_model_stability": "候选模型性能景观、Bootstrap 区间与时间留出对照",
+    "fig13_bootstrap_decision_stability": "参数、切点、归组与排程的 Bootstrap 决策稳定性传递"
+  },
+  "primary_sources": [
+    "nipt_solution/outputs/final_results/q1_final_coefficients.csv",
+    "nipt_solution/outputs/male_stability/q2_tau_measurement_rho80.npz",
+    "nipt_solution/outputs/final_results/q2_final_policies.csv",
+    "nipt_solution/outputs/final_results/q3_aft_paired_increment.csv",
+    "nipt_solution/outputs/q4_final_locked/q4_locked_record_results.csv",
+    "nipt_solution/outputs/q4_final_locked/q4_locked_method_comparison.csv",
+    "nipt_solution/outputs/q4_final_locked/q4_locked_bootstrap_summary.csv"
+  ]
+}

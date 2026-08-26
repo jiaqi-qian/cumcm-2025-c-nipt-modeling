@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "input_sha256": "14827156218bd4f7e4f16db4aa6d9f757c6648379e038ae6c6b58383648614af",
+  "record_answers": 605,
+  "unique_record_ids": 605,
+  "women": 147,
+  "missing_answer_scores": 0,
+  "nested_prediction_rows": 21780,
+  "nested_missing_scores": 0,
+  "stability_seeds_per_target": 100,
+  "bootstrap_replicates_per_target": 500,
+  "t21_elastic_sensitivity_seeds": 100,
+  "t21_elastic_bootstrap_replicates": 500,
+  "workbook_sheets": 17,
+  "leakage_checks": {
+    "woman_overlap_between_train_and_test": 0,
+    "labels_used_as_features": false,
+    "row_id_or_woman_code_used_as_features": false,
+    "future_measurements_used_in_longitudinal_features": false,
+    "outer_test_fold_used_for_threshold": false,
+    "outer_test_fold_used_for_optuna": false
+  }
+}

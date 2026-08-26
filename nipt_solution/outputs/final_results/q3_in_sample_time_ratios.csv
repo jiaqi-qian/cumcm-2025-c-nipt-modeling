@@ -1,0 +1,17 @@
+model,feature,standardized_coefficient,raw_log_time_coefficient,time_ratio_per_unit,status
+bmi_only,first_bmi,0.11701102,0.0391847159949461,1.039962563629137,in_sample_explanatory_only
+bmi_age_height,first_bmi,0.11140545,0.037307519569859046,1.038012180821026,in_sample_explanatory_only
+bmi_age_height,age,0.01127848,0.00312462516933048,1.003129511898962,in_sample_explanatory_only
+bmi_age_height,height,0.04265599,0.008314100442051952,1.0083487585589026,in_sample_explanatory_only
+weight_height_full,first_weight,0.15070306,0.015176391740368472,1.0152921379689233,in_sample_explanatory_only
+weight_height_full,height,-0.0433603,-0.008451377858010216,0.9915842346403287,in_sample_explanatory_only
+weight_height_full,age,0.01366214,0.003785001747657195,1.003792173912803,in_sample_explanatory_only
+weight_height_full,gravidity,0.01351051,0.01575859012528201,1.0158834115144144,in_sample_explanatory_only
+weight_height_full,parity,-0.08205297,-0.1271068219425681,0.88063959594018,in_sample_explanatory_only
+weight_height_full,ivf_iui,0.02058266,0.16943569318190144,1.1846361644012788,in_sample_explanatory_only
+bmi_full,first_bmi,0.11647167,0.03900409816448984,1.039774744809363,in_sample_explanatory_only
+bmi_full,age,0.01427259,0.003954122713835066,1.0039619505710886,in_sample_explanatory_only
+bmi_full,height,0.037523,0.007313626782243605,1.0073404366699157,in_sample_explanatory_only
+bmi_full,gravidity,0.01421869,0.01658460767420668,1.0167228957065921,in_sample_explanatory_only
+bmi_full,parity,-0.08278689,-0.12824372458923755,0.8796389633714821,in_sample_explanatory_only
+bmi_full,ivf_iui,0.02008739,0.16535864892415242,1.1798161826457467,in_sample_explanatory_only

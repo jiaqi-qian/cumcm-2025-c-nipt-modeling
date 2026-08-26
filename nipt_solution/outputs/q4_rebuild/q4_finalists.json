@@ -1,0 +1,70 @@
+{
+  "ANY": [
+    {
+      "track": "record",
+      "feature_set": "engineered",
+      "model": "elastic"
+    },
+    {
+      "track": "record",
+      "feature_set": "engineered",
+      "model": "lightgbm"
+    },
+    {
+      "track": "record",
+      "feature_set": "engineered",
+      "model": "lda"
+    }
+  ],
+  "T13": [
+    {
+      "track": "record",
+      "feature_set": "longitudinal",
+      "model": "extra_trees"
+    },
+    {
+      "track": "record",
+      "feature_set": "engineered",
+      "model": "lightgbm"
+    },
+    {
+      "track": "record",
+      "feature_set": "longitudinal",
+      "model": "elastic"
+    }
+  ],
+  "T18": [
+    {
+      "track": "record",
+      "feature_set": "engineered",
+      "model": "elastic"
+    },
+    {
+      "track": "record",
+      "feature_set": "longitudinal",
+      "model": "lightgbm"
+    },
+    {
+      "track": "record",
+      "feature_set": "longitudinal",
+      "model": "elastic"
+    }
+  ],
+  "T21": [
+    {
+      "track": "record",
+      "feature_set": "engineered",
+      "model": "elastic"
+    },
+    {
+      "track": "record",
+      "feature_set": "engineered",
+      "model": "lightgbm"
+    },
+    {
+      "track": "record",
+      "feature_set": "engineered",
+      "model": "lda"
+    }
+  ]
+}

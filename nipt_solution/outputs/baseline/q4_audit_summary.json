@@ -1,0 +1,33 @@
+{
+  "records": 605,
+  "women": 147,
+  "abnormal_records": 67,
+  "abnormal_women": 44,
+  "gc_outside_40_60": 220,
+  "labels": {
+    "T13": {
+      "positive_records": 23,
+      "positive_women": 18,
+      "z_ge_3_sensitivity": 0.043478260869565216,
+      "abs_z_ge_3_sensitivity": 0.043478260869565216,
+      "positive_z_min": -2.807104139,
+      "positive_z_max": 3.808298807
+    },
+    "T18": {
+      "positive_records": 46,
+      "positive_women": 30,
+      "z_ge_3_sensitivity": 0.0,
+      "abs_z_ge_3_sensitivity": 0.0,
+      "positive_z_min": -0.904459909,
+      "positive_z_max": 2.974066103
+    },
+    "T21": {
+      "positive_records": 13,
+      "positive_women": 12,
+      "z_ge_3_sensitivity": 0.0,
+      "abs_z_ge_3_sensitivity": 0.0,
+      "positive_z_min": -2.394334961,
+      "positive_z_max": 1.329150733
+    }
+  }
+}

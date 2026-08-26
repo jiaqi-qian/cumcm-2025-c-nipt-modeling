@@ -1,0 +1,19 @@
+{
+  "locked_version": "Q4-LOCK-2026-08-24-v1",
+  "targets": [
+    "ANY",
+    "T13",
+    "T18",
+    "T21"
+  ],
+  "record_rows": 2420,
+  "expected_record_rows": 2420,
+  "target_row_id_unique": true,
+  "scores_finite": true,
+  "bootstrap_replicates_each": 500,
+  "all_selected_have_100_seed_metrics": true,
+  "t21_automatic_diagnosis_disabled": true,
+  "woman_overlap_between_train_test": 0,
+  "test_used_for_threshold_or_feature_selection": false,
+  "all_checks_pass": true
+}

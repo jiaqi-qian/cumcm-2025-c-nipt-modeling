@@ -1,0 +1,603 @@
+{
+  "metadata": {
+    "data": "附件.xlsx",
+    "data_sha256": "14827156218bd4f7e4f16db4aa6d9f757c6648379e038ae6c6b58383648614af",
+    "python": "3.13.5",
+    "bootstrap": 500,
+    "q3_random_seeds": 100,
+    "q4_random_seeds": 100,
+    "q4_nested_seeds": 20,
+    "run_manifests": {
+      "male_stability": {
+        "bootstrap": 500,
+        "q1_cv_seeds": 20,
+        "q3_cv_seeds": 100,
+        "jobs": 4,
+        "q1_bootstrap_success": 500,
+        "elapsed_seconds": 653.723418712616
+      },
+      "q3_ml": {
+        "seeds": 100,
+        "trees": 200,
+        "rows": 1083,
+        "women": 265,
+        "elapsed_seconds": 107.35428142547607
+      },
+      "q4": {
+        "seeds": 100,
+        "nested_seeds": 20,
+        "trees": 150,
+        "selected_models": {
+          "T13": "elastic_full",
+          "T18": "elastic_full",
+          "T21": "elastic_full"
+        },
+        "parameters": {
+          "T13": {
+            "z_only": {},
+            "firth": {},
+            "elastic_full": {
+              "C": 1.0,
+              "l1_ratio": 0.5
+            },
+            "random_forest": {
+              "max_depth": 5,
+              "min_leaf": 5
+            }
+          },
+          "T18": {
+            "z_only": {},
+            "firth": {},
+            "elastic_full": {
+              "C": 0.3,
+              "l1_ratio": 0.5
+            },
+            "random_forest": {
+              "max_depth": 7,
+              "min_leaf": 5
+            }
+          },
+          "T21": {
+            "z_only": {},
+            "firth": {},
+            "elastic_full": {
+              "C": 0.3,
+              "l1_ratio": 0.0
+            },
+            "random_forest": {
+              "max_depth": 7,
+              "min_leaf": 5
+            }
+          }
+        },
+        "elapsed_seconds": 1501.2035076618195
+      }
+    }
+  },
+  "q1": {
+    "bootstrap_success": 500,
+    "pre18_slope": 0.0233797346000777,
+    "post18_total_slope": 0.0631484655147036,
+    "bmi_between_slope": -0.0379782874233784,
+    "within_bmi_significant": false,
+    "hinge_lrt_statistic": 19.109659203824776,
+    "hinge_lrt_p_value": 1.2341867818356378e-05,
+    "icc_logit": 0.7304541767953635,
+    "technical_sd_y": 0.006126544983671672,
+    "technical_sd_bootstrap_q025": 0.00505160880493929,
+    "technical_sd_bootstrap_q975": 0.007491734237710059,
+    "random_slope_boundary_warning": true,
+    "rf_vs_ridge_rmse_gain_percent": 4.762077672656246,
+    "rf_vs_ridge_seed_q025": 0.0011786873574174282,
+    "ml_decision": "retain_mixed_model_for_inference_and_extrapolation; use_random_forest_as_local_prediction_audit"
+  },
+  "q2": {
+    "primary_error_method": "measurement_perturbation_cluster_bootstrap",
+    "point_distribution": "lognormal",
+    "point_interval_counts": {
+      "left": 217,
+      "interval": 43,
+      "right": 7
+    },
+    "credible_interval_counts": {
+      "left": 235,
+      "interval": 16,
+      "right": 9,
+      "uninformative": 7
+    },
+    "bootstrap_replicates_per_mode": 500,
+    "selected_groups": 4,
+    "cut_selection": "exact K=4 DP on the individual bootstrap-median reliable times; then round to 0.5 BMI and revalidate",
+    "k4_fraction_of_max_loss_reduction": {
+      "80": 0.8911997293295794,
+      "90": 0.9267661720650738
+    },
+    "cuts": {
+      "80": [
+        31.0,
+        33.5,
+        36.0
+      ],
+      "90": [
+        31.0,
+        33.5,
+        36.0
+      ]
+    },
+    "mean_group_assignment_stability": {
+      "80": 0.8820674157303371,
+      "90": 0.825625468164794
+    },
+    "policies": [
+      {
+        "rho": 0.8,
+        "group": 1,
+        "bmi_rule_left": null,
+        "bmi_rule_right": 31.0,
+        "bmi_interval": "BMI < 31",
+        "observed_bmi_min": 20.703125,
+        "observed_bmi_max": 30.9542707710965,
+        "n": 123,
+        "point_week": 11.77021598815918,
+        "point_week_day": "11周+5天",
+        "bootstrap_q025_week": 10.0,
+        "bootstrap_q975_week": 12.99844183921814,
+        "recommended_week_raw": 12.842233085632325,
+        "recommended_week": 12.857142857142858,
+        "recommended_week_day": "12周+6天",
+        "bootstrap_guarantee_probability": 0.954,
+        "bootstrap_window_guarantee_probability_at_25": 1.0,
+        "strict_individual_q95_week": 12.857142857142858,
+        "strict_individual_q95_week_raw": 12.842233085632325,
+        "strict_individual_q95_week_day": "12周+6天",
+        "median_tau_coverage_at_recommendation": 1.0,
+        "individual_q95_coverage_at_recommendation": 0.9024390243902439,
+        "mean_attainment_probability": 0.8571991877518577,
+        "mean_attainment_probability_at_25": 0.9898673428878852,
+        "individual_q95_after_25": 0,
+        "recommendation_after_25": false,
+        "operational_action": "schedule_at_recommended_week",
+        "cvar90_q95_shortfall": 0.05336673495533644,
+        "support_status": "main_support"
+      },
+      {
+        "rho": 0.8,
+        "group": 2,
+        "bmi_rule_left": 31.0,
+        "bmi_rule_right": 33.5,
+        "bmi_interval": "31 <= BMI < 33.5",
+        "observed_bmi_min": 31.0963695756299,
+        "observed_bmi_max": 33.46222487,
+        "n": 82,
+        "point_week": 12.870380401611328,
+        "point_week_day": "12周+6天",
+        "bootstrap_q025_week": 11.569279766082763,
+        "bootstrap_q975_week": 14.114718580245972,
+        "recommended_week_raw": 13.918042707443236,
+        "recommended_week": 14.0,
+        "recommended_week_day": "14周+0天",
+        "bootstrap_guarantee_probability": 0.96,
+        "bootstrap_window_guarantee_probability_at_25": 1.0,
+        "strict_individual_q95_week": 14.0,
+        "strict_individual_q95_week_raw": 13.918042707443236,
+        "strict_individual_q95_week_day": "14周+0天",
+        "median_tau_coverage_at_recommendation": 1.0,
+        "individual_q95_coverage_at_recommendation": 0.8780487804878049,
+        "mean_attainment_probability": 0.8543226233429021,
+        "mean_attainment_probability_at_25": 0.9842634153333063,
+        "individual_q95_after_25": 0,
+        "recommendation_after_25": false,
+        "operational_action": "schedule_at_recommended_week",
+        "cvar90_q95_shortfall": 0.09596890873379119,
+        "support_status": "main_support"
+      },
+      {
+        "rho": 0.8,
+        "group": 3,
+        "bmi_rule_left": 33.5,
+        "bmi_rule_right": 36.0,
+        "bmi_interval": "33.5 <= BMI < 36",
+        "observed_bmi_min": 33.5166225167003,
+        "observed_bmi_max": 35.94414543,
+        "n": 42,
+        "point_week": 13.893853664398193,
+        "point_week_day": "13周+6天",
+        "bootstrap_q025_week": 11.991618418693543,
+        "bootstrap_q975_week": 15.845988059043885,
+        "recommended_week_raw": 15.49825983047485,
+        "recommended_week": 15.571428571428571,
+        "recommended_week_day": "15周+4天",
+        "bootstrap_guarantee_probability": 0.952,
+        "bootstrap_window_guarantee_probability_at_25": 1.0,
+        "strict_individual_q95_week": 15.571428571428571,
+        "strict_individual_q95_week_raw": 15.49825983047485,
+        "strict_individual_q95_week_day": "15周+4天",
+        "median_tau_coverage_at_recommendation": 1.0,
+        "individual_q95_coverage_at_recommendation": 0.8095238095238095,
+        "mean_attainment_probability": 0.8661551991242626,
+        "mean_attainment_probability_at_25": 0.977136360213182,
+        "individual_q95_after_25": 0,
+        "recommendation_after_25": false,
+        "operational_action": "schedule_at_recommended_week",
+        "cvar90_q95_shortfall": 0.3452364962441575,
+        "support_status": "main_support"
+      },
+      {
+        "rho": 0.8,
+        "group": 4,
+        "bmi_rule_left": 36.0,
+        "bmi_rule_right": null,
+        "bmi_interval": "36 <= BMI",
+        "observed_bmi_min": 36.25047023,
+        "observed_bmi_max": 46.875,
+        "n": 20,
+        "point_week": 15.871028423309326,
+        "point_week_day": "15周+6天",
+        "bootstrap_q025_week": 12.482573914527894,
+        "bootstrap_q975_week": 20.67290930747986,
+        "recommended_week_raw": 19.774085330963132,
+        "recommended_week": 19.857142857142858,
+        "recommended_week_day": "19周+6天",
+        "bootstrap_guarantee_probability": 0.952,
+        "bootstrap_window_guarantee_probability_at_25": 1.0,
+        "strict_individual_q95_week": 19.857142857142858,
+        "strict_individual_q95_week_raw": 19.774085330963132,
+        "strict_individual_q95_week_day": "19周+6天",
+        "median_tau_coverage_at_recommendation": 0.95,
+        "individual_q95_coverage_at_recommendation": 0.8,
+        "mean_attainment_probability": 0.8936790228635185,
+        "mean_attainment_probability_at_25": 0.9508425931640506,
+        "individual_q95_after_25": 2,
+        "recommendation_after_25": false,
+        "operational_action": "schedule_at_recommended_week",
+        "cvar90_q95_shortfall": 11.009807559422082,
+        "support_status": "high_bmi_tail"
+      },
+      {
+        "rho": 0.9,
+        "group": 1,
+        "bmi_rule_left": null,
+        "bmi_rule_right": 31.0,
+        "bmi_interval": "BMI < 31",
+        "observed_bmi_min": 20.703125,
+        "observed_bmi_max": 30.9542707710965,
+        "n": 123,
+        "point_week": 14.843201637268066,
+        "point_week_day": "14周+6天",
+        "bootstrap_q025_week": 13.082338571548462,
+        "bootstrap_q975_week": 16.571609592437746,
+        "recommended_week_raw": 16.197705078124997,
+        "recommended_week": 16.285714285714285,
+        "recommended_week_day": "16周+2天",
+        "bootstrap_guarantee_probability": 0.958,
+        "bootstrap_window_guarantee_probability_at_25": 1.0,
+        "strict_individual_q95_week": 16.285714285714285,
+        "strict_individual_q95_week_raw": 16.197705078124997,
+        "strict_individual_q95_week_day": "16周+2天",
+        "median_tau_coverage_at_recommendation": 1.0,
+        "individual_q95_coverage_at_recommendation": 0.967479674796748,
+        "mean_attainment_probability": 0.9360606951885324,
+        "mean_attainment_probability_at_25": 0.9898673428878852,
+        "individual_q95_after_25": 0,
+        "recommendation_after_25": false,
+        "operational_action": "schedule_at_recommended_week",
+        "cvar90_q95_shortfall": 0.011067392537882189,
+        "support_status": "main_support"
+      },
+      {
+        "rho": 0.9,
+        "group": 2,
+        "bmi_rule_left": 31.0,
+        "bmi_rule_right": 33.5,
+        "bmi_interval": "31 <= BMI < 33.5",
+        "observed_bmi_min": 31.0963695756299,
+        "observed_bmi_max": 33.46222487,
+        "n": 82,
+        "point_week": 16.22910213470459,
+        "point_week_day": "16周+2天",
+        "bootstrap_q025_week": 14.594279670715332,
+        "bootstrap_q975_week": 18.21604323387146,
+        "recommended_week_raw": 17.77415533065796,
+        "recommended_week": 17.857142857142858,
+        "recommended_week_day": "17周+6天",
+        "bootstrap_guarantee_probability": 0.964,
+        "bootstrap_window_guarantee_probability_at_25": 1.0,
+        "strict_individual_q95_week": 17.857142857142858,
+        "strict_individual_q95_week_raw": 17.77415533065796,
+        "strict_individual_q95_week_day": "17周+6天",
+        "median_tau_coverage_at_recommendation": 1.0,
+        "individual_q95_coverage_at_recommendation": 0.9878048780487805,
+        "mean_attainment_probability": 0.936138732263587,
+        "mean_attainment_probability_at_25": 0.9842634153333063,
+        "individual_q95_after_25": 0,
+        "recommendation_after_25": false,
+        "operational_action": "schedule_at_recommended_week",
+        "cvar90_q95_shortfall": 0.0019663568526979702,
+        "support_status": "main_support"
+      },
+      {
+        "rho": 0.9,
+        "group": 3,
+        "bmi_rule_left": 33.5,
+        "bmi_rule_right": 36.0,
+        "bmi_interval": "33.5 <= BMI < 36",
+        "observed_bmi_min": 33.5166225167003,
+        "observed_bmi_max": 35.94414543,
+        "n": 42,
+        "point_week": 17.55651569366455,
+        "point_week_day": "17周+4天",
+        "bootstrap_q025_week": 14.951153826713561,
+        "bootstrap_q975_week": 20.641291284561156,
+        "recommended_week_raw": 20.276170635223387,
+        "recommended_week": 20.285714285714285,
+        "recommended_week_day": "20周+2天",
+        "bootstrap_guarantee_probability": 0.95,
+        "bootstrap_window_guarantee_probability_at_25": 1.0,
+        "strict_individual_q95_week": 20.285714285714285,
+        "strict_individual_q95_week_raw": 20.276170635223387,
+        "strict_individual_q95_week_day": "20周+2天",
+        "median_tau_coverage_at_recommendation": 1.0,
+        "individual_q95_coverage_at_recommendation": 0.9047619047619048,
+        "mean_attainment_probability": 0.9464291448640073,
+        "mean_attainment_probability_at_25": 0.977136360213182,
+        "individual_q95_after_25": 0,
+        "recommendation_after_25": false,
+        "operational_action": "schedule_at_recommended_week",
+        "cvar90_q95_shortfall": 0.15213467189243915,
+        "support_status": "main_support"
+      },
+      {
+        "rho": 0.9,
+        "group": 4,
+        "bmi_rule_left": 36.0,
+        "bmi_rule_right": null,
+        "bmi_interval": "36 <= BMI",
+        "observed_bmi_min": 36.25047023,
+        "observed_bmi_max": 46.875,
+        "n": 20,
+        "point_week": 21.12770652770996,
+        "point_week_day": "21周+1天",
+        "bootstrap_q025_week": 15.3390527009964,
+        "bootstrap_q975_week": 29.816321706771852,
+        "recommended_week_raw": 28.385035419464103,
+        "recommended_week": 28.428571428571427,
+        "recommended_week_day": "28周+3天",
+        "bootstrap_guarantee_probability": 0.95,
+        "bootstrap_window_guarantee_probability_at_25": 0.792,
+        "strict_individual_q95_week": 28.428571428571427,
+        "strict_individual_q95_week_raw": 28.385035419464103,
+        "strict_individual_q95_week_day": "28周+3天",
+        "median_tau_coverage_at_recommendation": 1.0,
+        "individual_q95_coverage_at_recommendation": 0.9,
+        "mean_attainment_probability": 0.969523282455383,
+        "mean_attainment_probability_at_25": 0.9508425931640506,
+        "individual_q95_after_25": 7,
+        "recommendation_after_25": true,
+        "operational_action": "window_infeasible_individualized_retest",
+        "cvar90_q95_shortfall": 10.343411145891444,
+        "support_status": "high_bmi_tail"
+      }
+    ],
+    "credible_state_warning": "credible reclassification creates heavy left censoring; use as sensitivity, not the point estimator"
+  },
+  "q3": {
+    "aft_multi_promoted": false,
+    "rf_multi_promoted": false,
+    "rf_multi_signal": true,
+    "final_model": "bmi_only_aft",
+    "final_grouping": "retain_q2",
+    "bmi_full_nll_improvement": {
+      "candidate": "bmi_full",
+      "metric": "nll",
+      "improvement_mean": -0.09481945090975767,
+      "improvement_q025": -0.12127861780391833,
+      "improvement_q975": -0.07234241628806387,
+      "positive_fraction": 0.0,
+      "relative_improvement_percent": -13.72495418065075
+    },
+    "bmi_full_brier_improvement": {
+      "candidate": "bmi_full",
+      "metric": "mean_brier",
+      "improvement_mean": -0.004445417703960809,
+      "improvement_q025": -0.009457094557523802,
+      "improvement_q975": -0.00183592149860052,
+      "positive_fraction": 0.0,
+      "relative_improvement_percent": -4.351108444396498
+    },
+    "ml_increment": [
+      {
+        "model_type": "logistic",
+        "metric": "roc_auc",
+        "improvement_mean": -0.03851076810285,
+        "q025": -0.0661031270550533,
+        "q975": -0.0215430124906969,
+        "positive_fraction": 0.0
+      },
+      {
+        "model_type": "logistic",
+        "metric": "pr_auc",
+        "improvement_mean": -0.015562924561952,
+        "q025": -0.0252330002597835,
+        "q975": -0.0090738241408209,
+        "positive_fraction": 0.0
+      },
+      {
+        "model_type": "logistic",
+        "metric": "brier",
+        "improvement_mean": -0.0008258426910895,
+        "q025": -0.0095086287509859,
+        "q975": 0.0034501806364772,
+        "positive_fraction": 0.38
+      },
+      {
+        "model_type": "rf",
+        "metric": "roc_auc",
+        "improvement_mean": 0.0400581095874135,
+        "q025": 0.0050224289738255,
+        "q975": 0.0698545734602647,
+        "positive_fraction": 0.98
+      },
+      {
+        "model_type": "rf",
+        "metric": "pr_auc",
+        "improvement_mean": 0.0098888678946272,
+        "q025": -0.0001180974219722,
+        "q975": 0.0208052308114276,
+        "positive_fraction": 0.97
+      },
+      {
+        "model_type": "rf",
+        "metric": "brier",
+        "improvement_mean": 0.0210257124556215,
+        "q025": 0.0139182329807731,
+        "q975": 0.0278759688324749,
+        "positive_fraction": 1.0
+      }
+    ]
+  },
+  "q4": {
+    "stability_seeds": 100,
+    "nested_seeds": 20,
+    "probability_interval_method": "2.5%/97.5% split-stability quantiles over repeated nested grouped cross-validation; not a clinical confidence interval",
+    "selected_validation_candidates": {
+      "T13": "elastic_full",
+      "T18": "elastic_full",
+      "T21": "elastic_full"
+    },
+    "operational_models": {
+      "T13": "elastic_full",
+      "T18": "elastic_full",
+      "T21": "no_automatic_model"
+    },
+    "qualification": {
+      "T13": "qualified_for_selective_prediction_only",
+      "T18": "qualified_for_selective_prediction_only",
+      "T21": "not_qualified_retest_all"
+    },
+    "selected_models": {
+      "T13": "elastic_full",
+      "T18": "elastic_full",
+      "T21": "elastic_full"
+    },
+    "promotion": [
+      {
+        "label": "T13",
+        "pr_gain_mean": 0.0289419570040949,
+        "pr_gain_q025": -0.096627618363583,
+        "pr_gain_q975": 0.142235666784292,
+        "brier_gain_mean": 0.0723723346561632,
+        "brier_gain_q025": 0.0594809532695027,
+        "brier_gain_q975": 0.0836976943113973,
+        "decision": "retain_elastic"
+      },
+      {
+        "label": "T18",
+        "pr_gain_mean": -0.1369989724573766,
+        "pr_gain_q025": -0.2220798241609783,
+        "pr_gain_q975": -0.0255579912005334,
+        "brier_gain_mean": 0.0622048727743117,
+        "brier_gain_q025": 0.0538479836339033,
+        "brier_gain_q975": 0.0706137306105309,
+        "decision": "retain_elastic"
+      },
+      {
+        "label": "T21",
+        "pr_gain_mean": -0.059247557929684,
+        "pr_gain_q025": -0.1546103793923344,
+        "pr_gain_q975": 0.0027733013654212,
+        "brier_gain_mean": 0.1061812153592184,
+        "brier_gain_q025": 0.0816360567772559,
+        "brier_gain_q975": 0.1275830458481479,
+        "decision": "select_regularized_logistic_no_tree"
+      }
+    ],
+    "selective_performance": [
+      {
+        "label": "T13",
+        "model": "elastic_full",
+        "records": 605,
+        "positive_records": 23,
+        "coverage": 0.05226757369614512,
+        "retest_rate": 0.9477324263038549,
+        "sensitivity_all": 0.0,
+        "specificity_all": 0.05455621301775147,
+        "selective_sensitivity": null,
+        "selective_specificity": 1.0,
+        "selective_accuracy": 1.0,
+        "definitive_positive_records": 0,
+        "definitive_negative_records": 32,
+        "retest_records": 573
+      },
+      {
+        "label": "T18",
+        "model": "elastic_full",
+        "records": 605,
+        "positive_records": 46,
+        "coverage": 0.20334197170931867,
+        "retest_rate": 0.7966580282906814,
+        "sensitivity_all": 0.1300578034682081,
+        "specificity_all": 0.19949264154480698,
+        "selective_sensitivity": 0.7086614173228346,
+        "selective_specificity": 0.9729969139330211,
+        "selective_accuracy": 0.9542787350981069,
+        "definitive_positive_records": 9,
+        "definitive_negative_records": 112,
+        "retest_records": 484
+      },
+      {
+        "label": "T21",
+        "model": "elastic_full",
+        "records": 605,
+        "positive_records": 13,
+        "coverage": 0.0,
+        "retest_rate": 1.0,
+        "sensitivity_all": 0.0,
+        "specificity_all": 0.0,
+        "selective_sensitivity": null,
+        "selective_specificity": null,
+        "selective_accuracy": null,
+        "definitive_positive_records": 0,
+        "definitive_negative_records": 0,
+        "retest_records": 605
+      }
+    ],
+    "decision_counts": [
+      {
+        "decision": "建议复检",
+        "records": 596
+      },
+      {
+        "decision": "异常:T18",
+        "records": 9
+      }
+    ]
+  },
+  "validation": {
+    "all_passed": true,
+    "checks": {
+      "q1_key_terms_present": true,
+      "q2_two_reliability_levels": true,
+      "q2_four_groups_each": true,
+      "q2_all_group_sizes_at_least_20": true,
+      "q2_each_level_has_267_women": true,
+      "q2_bootstrap_guarantee_at_least_95pct": true,
+      "q3_all_three_multi_candidates_compared": true,
+      "q4_605_unique_records": true,
+      "q4_T13_probability_order": true,
+      "q4_T13_threshold_order": true,
+      "q4_T18_probability_order": true,
+      "q4_T18_threshold_order": true,
+      "q4_T21_probability_order": true,
+      "q4_T21_threshold_order": true,
+      "q4_decision_counts_sum_605": true
+    }
+  },
+  "figures": [
+    "nipt_solution/outputs/final_results/figures/q1_effect_curves.png",
+    "nipt_solution/outputs/final_results/figures/q2_recommended_times.png",
+    "nipt_solution/outputs/final_results/figures/q3_aft_increment.png",
+    "nipt_solution/outputs/final_results/figures/q4_selective_performance.png",
+    "nipt_solution/outputs/final_results/figures/q4_model_comparison.png",
+    "nipt_solution/outputs/final_results/figures/q4_calibration.png"
+  ]
+}

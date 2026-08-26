@@ -1,0 +1,20 @@
+{
+  "all_passed": true,
+  "checks": {
+    "q1_key_terms_present": true,
+    "q2_two_reliability_levels": true,
+    "q2_four_groups_each": true,
+    "q2_all_group_sizes_at_least_20": true,
+    "q2_each_level_has_267_women": true,
+    "q2_bootstrap_guarantee_at_least_95pct": true,
+    "q3_all_three_multi_candidates_compared": true,
+    "q4_605_unique_records": true,
+    "q4_T13_probability_order": true,
+    "q4_T13_threshold_order": true,
+    "q4_T18_probability_order": true,
+    "q4_T18_threshold_order": true,
+    "q4_T21_probability_order": true,
+    "q4_T21_threshold_order": true,
+    "q4_decision_counts_sum_605": true
+  }
+}

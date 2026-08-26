@@ -1,0 +1,41 @@
+{
+  "chosen_model": "ga_hinge_18",
+  "centers": {
+    "ga": 16.671372658652505,
+    "first_bmi": 31.826071566847453,
+    "age": 28.897260273972602,
+    "height": 161.0503913894325
+  },
+  "n_visits": 1022,
+  "n_women": 267,
+  "aic": 801.4521200370173,
+  "bic": 835.9587374323628,
+  "loglik": -393.72606001850863,
+  "converged": true,
+  "warnings": [],
+  "random_intercept_var": 0.18253835339753285,
+  "random_intercept_sd": 0.4272450741641533,
+  "residual_var_logit": 0.06735870954810201,
+  "residual_sd_logit": 0.25953556509292136,
+  "icc_logit": 0.7304541767953635,
+  "random_slope_sensitivity": {
+    "aic": 718.5486561682783,
+    "bic": 762.9143071051511,
+    "loglik": -350.27432808413914,
+    "converged": true,
+    "cov_re": [
+      [
+        0.19154859563445562,
+        0.0007471723773796177
+      ],
+      [
+        0.0007471723773796177,
+        0.0012056579587594743
+      ]
+    ],
+    "residual_var": 0.04701193861939321,
+    "warnings": [
+      "The MLE may be on the boundary of the parameter space."
+    ]
+  }
+}
